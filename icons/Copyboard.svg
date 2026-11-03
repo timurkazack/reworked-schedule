@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Grafika (https://www.grafika.cc/) -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2048" height="2048" viewBox="0 0 891.47 1168.63" preserveAspectRatio="xMidYMid meet">
+	<rect x="15" y="88.86" width="861.47" height="1064.77" id="Прямоугольник" style="fill:#BC6C25;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:30;" />
+	<rect x="83.67" y="147.33" width="724.14" height="947.77" id="Прямоугольник 1" style="fill:#CAC9CD;" />
+	<rect x="246.85" y="15" width="397.77" height="147.72" id="Прямоугольник 2" style="fill:#3E3B39;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:30;" />
+	<line x1="202.8" y1="384.56" x2="688.68" y2="384.56" id="Линия" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:30;" />
+	<line x1="202.8" y1="549.29" x2="688.68" y2="549.29" id="Линия 1" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:30;" />
+	<line x1="202.8" y1="704.72" x2="688.68" y2="704.72" id="Линия 2" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:30;" />
+	<line x1="202.8" y1="879.37" x2="688.68" y2="879.37" id="Линия 3" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:30;" />
+</svg>

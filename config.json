@@ -1,0 +1,154 @@
+{
+    "shifts": [
+	{
+        "id": "1",
+        "label": "1-я смена",
+        "bells": {
+            "Пн": [
+                ["08.40", "09.20"],
+                ["09.35", "10.15"],
+                ["10.30", "11.10"],
+                ["11.25", "12.05"],
+                ["12.20", "13.00"],
+                ["13.10", "13.50"],
+                ["14.00", "14.40"]
+            ],
+            "Чт": [
+                ["08.40", "09.20"],
+                ["09.35", "10.15"],
+                ["10.30", "11.10"],
+                ["11.25", "12.05"],
+                ["12.20", "13.00"],
+                ["13.10", "13.50"],
+                ["14.00", "14.40"]
+            ],
+            "default": [
+                ["08.00", "08.40"],
+                ["08.50", "09.30"],
+                ["09.45", "10.25"],
+                ["10.40", "11.20"],
+                ["11.35", "12.15"],
+                ["12.25", "13.05"],
+                ["13.15", "13.55"]
+            ]
+        }
+    },
+    {
+        "id": "2",
+        "label": "2-я смена",
+        "bells": {
+            "Пн": [
+                ["14.00", "14.40"],
+                ["14.55", "15.35"],
+                ["15.50", "16.30"],
+                ["16.40", "17.20"],
+                ["17.30", "18.10"],
+                ["18.20", "19.00"]
+            ],
+            "Чт": [
+                ["14.00", "14.40"],
+                ["14.55", "15.35"],
+                ["15.50", "16.30"],
+                ["16.40", "17.20"],
+                ["17.30", "18.10"],
+                ["18.20", "19.00"]
+            ],
+            "default": [
+                ["14.00", "14.40"],
+                ["14.55", "15.35"],
+                ["15.50", "16.30"],
+                ["16.40", "17.20"],
+                ["17.30", "18.10"],
+                ["18.20", "19.00"]
+            ]
+        }
+    }
+	],
+    "days": {
+        "order": ["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY"],
+        "labels": {
+            "MONDAY": "Пн",
+            "TUESDAY": "Вт",
+            "WEDNESDAY": "Ср",
+            "THURSDAY": "Чт",
+            "FRIDAY": "Пт",
+            "SATURDAY": "Сб",
+            "SUNDAY": "Вс"
+        }
+    },
+    "daysCards": {
+        "order": ["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY"],
+        "labels": {
+            "MONDAY": "Понедельник",
+            "TUESDAY": "Вторник",
+            "WEDNESDAY": "Среда",
+            "THURSDAY": "Четверг",
+            "FRIDAY": "Пятница",
+            "SATURDAY": "Суббота",
+            "SUNDAY": "Воскресенье"
+        }
+    },
+    "data": {
+        "targetUrl": "https://nextler.ru/6zk8zL1lsy.html?companyid=-mzPgPOgmP0hOUbHwopNk&tableid=-DpPW1Nus2Ypi6avVpfzu",
+        "baseUrl": "https://schooltimetable-f4833.firebaseio.com",
+        "wssHost": "s-gke-usc1-nssi3-22.firebaseio.com",
+        "keepaliveInterval": 45000,
+        "reconnectInterval": 5000,
+        "pollInterval": 60000,
+        "retryInterval": 10000
+    },
+    "progress": {
+        "limitMinutes": 40,
+        "islandPercent": 1,
+        "line": {
+            "enabled": true,
+            "widthPx": 3,
+            "opacity": 0.55
+        },
+        "colors": {
+            "before": "rgba(34, 197, 94, 0.28)",
+            "ongoing": "rgba(239, 68, 68, 0.32)",
+            "done": "rgba(100, 116, 139, 0.38)"
+        }
+    },
+    "texts": {
+        "appTitle": "Расписание МБОУ СОШ №19",
+        "shiftNone": "Не задано",
+        "logShow": "📋 Показать лог",
+        "logHide": "📋 Скрыть лог",
+        "errorConfigLoad": "⚠️ Не удалось загрузить настройки (config.json). Проверьте соединение и обновите страницу.",
+        "errorScheduleEmpty": "Расписание пустое или не найдено.",
+        "errorNoClasses": "Нет классов с расписанием.",
+        "notifyScheduleChanged": "📢 Расписание для {classes} было изменено",
+        "notifyScheduleUpdated": "📢 Расписание для {classes} обновлено",
+        "notifyCacheUsed": "⚠️ Не удалось загрузить\nИспользуется расписание от {date}",
+        "months": ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"],
+        "modeOriginalTitle": "Как в оригинале",
+        "modeOriginalIcon": "📋",
+        "modeOriginalDesc": "Таблица расписания как на сайте NEXTLER",
+        "modeCardsTitle": "День за днём",
+        "modeCardsIcon": "📆",
+        "modeCardsDesc": "Карточки расписания класса, листайте по дням",
+        "cardsLoading": "Загрузка…",
+        "cardsToday": "Сегодня",
+        "cardsTomorrow": "Завтра",
+        "cardsEmptyDay": "На этот день расписания нет",
+        "cardsEmptyIcon": "📭",
+        "cardsParallelSuffix": " класс",
+        "tableHeaderClass": "Класс",
+        "updateAvailable": "Доступно обновление!\nВерсия {version}\n",
+        "statsLabelClasses": "Классов",
+        "statsLabelLessons": "Всего уроков",
+        "statsLabelMost": "Больше всего уроков · {count}",
+        "settingsTitle": "Настройки",
+        "settingsClose": "Закрыть",
+        "settingsProgressTitle": "Прогресс уроков",
+        "settingsProgressDesc": "Фон по состоянию урока, полоса заполнения, островок и «≈» до начала",
+        "settingsScopeTitle": "Показывать прогресс",
+        "settingsScopeDesc": "Только на сегодняшних уроках или на всех днях",
+        "settingsScopeToday": "Сегодня",
+        "settingsScopeAll": "Все дни",
+        "settingsStatsTitle": "Статистика расписания",
+        "settingsStatsDesc": "Число классов, всего уроков и класс с наибольшим числом уроков"
+    }
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Grafika (https://www.grafika.cc/) -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2048" height="2048" viewBox="0 0 871.47 871.47" preserveAspectRatio="xMidYMid meet">
+	<ellipse cx="435.74" cy="435.74" rx="430.74" ry="430.74" id="Эллипс" style="fill:#CAC9CD;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:10;" />
+	<ellipse cx="435.74" cy="435.74" rx="11.67" ry="11.67" id="Эллипс 1" style="fill:#000000;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:10;" />
+	<path d="M5 435.74 L62.53 435.74 M808.94 435.74 L866.47 435.74" fill-rule="evenodd" id="Путь 1" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:10;" />
+	<path d="M37.68 270.86 L90.85 292.88 M780.62 578.59 L833.79 600.62" fill-rule="evenodd" id="Путь" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:10;" />
+	<path d="M270.86 37.68 L292.88 90.85 M578.59 780.62 L600.62 833.79" fill-rule="evenodd" id="Путь 3" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:10;" />
+	<path transform="matrix(1.54028871197372e-16, -1, 1, 6.57609213840021e-17, 1041.39834140964, 435.737178926149)" d="M-430.74 -605.66 L-373.2 -605.66 M373.2 -605.66 L430.74 -605.66" fill-rule="evenodd" id="Путь 2" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:10;" />
+	<path transform="matrix(1.54028871197372e-16, -1, 1, 6.57609213840021e-17, 1041.39834140964, 435.737178926149)" d="M-398.05 -770.54 L-344.89 -748.52 M344.89 -462.8 L398.05 -440.78" fill-rule="evenodd" id="Путь 7" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:10;" />
+	<path transform="matrix(1.54028871197372e-16, -1, 1, 6.57609213840021e-17, 1041.39834140964, 435.737178926149)" d="M-164.88 -1003.71 L-142.86 -950.55 M142.86 -260.78 L164.88 -207.61" fill-rule="evenodd" id="Путь 4" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:10;" />
+	<path transform="matrix(-0.707106781186547, -0.707106781186547, 0.707106781186547, -0.707106781186547, 864.00429401955, 7.47006383274811)" d="M373.2 -605.66 L430.74 -605.66 M-430.74 -605.66 L-373.2 -605.66" fill-rule="evenodd" id="Путь 5" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:10;" />
+	<path transform="matrix(-0.707106781186548, 0.707106781186547, -0.707106781186547, -0.707106781186547, 7.47006383274754, 7.47006383274743)" d="M373.2 -605.66 L430.74 -605.66 M-430.74 -605.66 L-373.2 -605.66" fill-rule="evenodd" id="Путь 6" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:10;" />
+	<line transform="matrix(2.60583195664146e-16, -1, 1, 1.31810456144707e-16, 1773.6473996783, 279.830081787126)" x1="-69.01" y1="-1337.91" x2="86.95" y2="-1337.91" id="Линия" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:30;" />
+	<line x1="501.31" y1="435.74" x2="753.85" y2="435.74" id="Линия 1" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:20;" />
+</svg>
