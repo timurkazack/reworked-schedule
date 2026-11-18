@@ -170,11 +170,14 @@ self.addEventListener("fetch", event => {
                 if (!cache) return fetch(event.request);
                 return cache.match(event.request).then(cached => {
                     if (cached) return cached;
-                    return fetch(event.request).then(response => {
-                        if (response && response.ok) {
-                            cache.put(event.request, response.clone()).catch(() => {});
-                        }
-                        return response;
+                    return cache.match(event.request, { ignoreSearch: true }).then(cached2 => {
+                        if (cached2) return cached2;
+                        return fetch(event.request).then(response => {
+                            if (response && response.ok) {
+                                cache.put(event.request, response.clone()).catch(() => {});
+                            }
+                            return response;
+                        });
                     });
                 });
             })
