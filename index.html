@@ -11,10 +11,12 @@ See the LICENSE file in the project root for full license text.
 <html lang="ru">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, viewport-fit=cover" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="mobile-web-app-capable" content="yes">
     <title>Reworked Schedule</title>
     <link rel="manifest" href="manifest.json">
     <link rel="icon" href="icons/icon-192.png">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
     <meta name="theme-color" content="#2563eb">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -42,11 +44,6 @@ See the LICENSE file in the project root for full license text.
                 <button class="settings-btn" id="settingsBtn" data-text-aria="settingsTitle" aria-haspopup="dialog"><img src="icons/Settings.svg" alt="" class="icon-in-btn"></button>
             </div>
         </div>
-
-        <div id="updateBlock" style="display:none;"></div>
-        <button class="update-toggle" id="updateToggle" style="display:none;"><img src="icons/Refresh.svg" alt="" class="icon-in-btn"> Обновить</button>
-
-        <button class="update-later-toggle" id="updateLaterToggle" style="display:none;"><img src="icons/Clock.svg" alt="" class="icon-in-btn"> Позже</button>
         <!-- ГЛАВНАЯ -->
         <div class="view view-home" id="viewHome">
             <div class="home-icon-wrap" id="homeIconWrap">
@@ -152,7 +149,6 @@ See the LICENSE file in the project root for full license text.
                     <div>Загрузка расписания…</div>
                 </div>
                 <div id="errorBlock" style="display:none;"></div>
-                <div id="cachedNotice" style="display:none;" class="cached-notice"></div>
 
                 <div class="class-search" id="classSearchBlock" style="display:none;">
                     <input type="text" id="classSearchInput" placeholder="Поиск: класс, урок, кабинет, № урока. Напр: урок:математика, кабинет:203. 5А" autocomplete="off" aria-label="Фильтр по расписанию" />
@@ -263,6 +259,8 @@ See the LICENSE file in the project root for full license text.
             </div>
         </div>
     </div>
+
+    <div id="floatingNotices" class="floating-notices" aria-live="polite"></div>
 
     <div class="cookie-banner hidden" id="cookieBanner">
         <span class="cookie-banner-text">Сайт использует cookie для сохранения ваших настроек (тема, смена, выбранный класс). Данные хранятся локально и не передаются третьим лицам.</span>

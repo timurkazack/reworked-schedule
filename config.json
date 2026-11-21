@@ -291,6 +291,8 @@
         "settingsScopeToday": "Сегодня",
         "settingsScopeAll": "Все дни",
         "settingsStatsTitle": "Статистика расписания",
-        "settingsStatsDesc": "Число классов, всего уроков и класс с наибольшим числом уроков"
+        "settingsStatsDesc": "Число классов, всего уроков и класс с наибольшим числом уроков",
+        "updateNow": "Обновить",
+        "updateLater": "Позже"
     }
 }

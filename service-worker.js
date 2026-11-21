@@ -22,6 +22,7 @@ const FILES = [
     "./help/vid/IOS_Safari_PWA_Install.mp4",
     "./icons/Arrow.svg",
     "./icons/Clock.svg",
+    "./icons/Close.svg",
     "./icons/Copyboard.svg",
     "./icons/Mode1.svg",
     "./icons/Mode2.svg",

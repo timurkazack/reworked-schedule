@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Grafika (https://www.grafika.cc/) -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2048" height="2048" viewBox="0 0 867.63 867.63" preserveAspectRatio="xMidYMid meet">
+	<ellipse cx="433.82" cy="433.82" rx="413.82" ry="413.82" id="Эллипс" style="fill:#CAC9CD;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:40;" />
+	<line transform="matrix(0.707086715726981, -0.707126846076736, 0.707126846076737, 0.707086715726981, 811.909834424025, 811.88837706529)" x1="-240" y1="-534.69" x2="240" y2="-534.69" id="Линия" style="fill:#000000;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:40;" />
+	<line transform="matrix(-0.707106781186548, -0.707106781186549, 0.707106781186548, -0.707106781186549, 811.899105896879, 55.7310704589943)" x1="-240" y1="-534.69" x2="240" y2="-534.69" id="Линия 1" style="fill:#000000;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:40;" />
+</svg>
