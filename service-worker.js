@@ -18,8 +18,6 @@ let _buildId = null;
 const FILES = [
     "./config.json",
     "./css/app.min.css",
-    "./help/vid/Android_Crome_PWA_Install.mp4",
-    "./help/vid/IOS_Safari_PWA_Install.mp4",
     "./icons/Arrow.svg",
     "./icons/Clock.svg",
     "./icons/Close.svg",
@@ -35,19 +33,7 @@ const FILES = [
     "./icons/giphy.gif",
     "./icons/icon-192.png",
     "./icons/icon-512.png",
-    "./icons/old/icon-192_old.png",
-    "./icons/old/icon-512_old.png",
     "./icons/plate.svg",
-    "./icons/unused/copy.svg",
-    "./icons/unused/icon-192.png",
-    "./icons/unused/icon-512.png",
-    "./icons/unused/moon.svg",
-    "./icons/unused/new_dark.jpg",
-    "./icons/unused/new_light.jpg",
-    "./icons/unused/sand_clock.svg",
-    "./icons/unused/settings-minimalistic-svgrepo-com.svg",
-    "./icons/unused/sun.svg",
-    "./icons/unused/update.svg",
     "./index.html",
     "./js/app.min.js",
     "./manifest.json",
@@ -57,12 +43,25 @@ const FILES = [
 // Находим самый «свежий» (лексикографически последний) кеш нашего приложения,
 // чтобы переиспользовать его, когда version.json недоступен
 function getExistingCacheName() {
-    return caches.keys().then(keys =>
-        keys
-            .filter(key => key.indexOf(CACHE_NAME_PREFIX + "-v") === 0)
-            .sort()
-            .pop() || null
-    );
+    const prefix = CACHE_NAME_PREFIX + "-v";
+
+    return caches.keys().then(keys => {
+        const cacheKeys = keys.filter(key => key.startsWith(prefix));
+        if (cacheKeys.length === 0) return null;
+
+        return cacheKeys.sort((a, b) => {
+            const partsA = a.slice(prefix.length).split(".").map(Number);
+            const partsB = b.slice(prefix.length).split(".").map(Number);
+            const len = Math.max(partsA.length, partsB.length);
+
+            for (let i = 0; i < len; i++) {
+                const numA = partsA[i] || 0;
+                const numB = partsB[i] || 0;
+                if (numA !== numB) return numA - numB;
+            }
+            return 0;
+        }).pop();
+    });
 }
 
 // Определяем имя кеша по версии, считанной из version.json.
@@ -95,6 +94,15 @@ function getCacheName() {
 function getActiveCacheName() {
     if (_cacheName) return Promise.resolve(_cacheName);
     return getExistingCacheName();
+}
+
+// version.json и config.json обязаны приходить с сети: отдавая их из кеша,
+// мы сравниваем установленную версию с той же самой закешированной версией,
+// поэтому плашка обновления не появляется. Firefox особенно агрессивно
+// кеширует ответы и сам service worker, поэтому для этих файлов используем
+// network-first, а при отсутствии сети падаем на кеш.
+function isNetworkFirst(url) {
+    return /(^|\/)(version|config)\.json$/.test(url.pathname);
 }
 
 // Кешируем файлы небольшими пакетами, чтобы не блокировать установку
@@ -164,6 +172,32 @@ self.addEventListener("fetch", event => {
     const url = new URL(event.request.url);
     if (url.origin !== location.origin) return;
 
+    if (isNetworkFirst(url)) {
+        event.respondWith((async () => {
+            try {
+                const response = await fetch(event.request, { cache: "no-store" });
+                if (response && response.ok) {
+                    const name = await getActiveCacheName();
+                    if (name) {
+                        try {
+                            const cache = await caches.open(name);
+                            const key = new URL(url.pathname, location.origin).href;
+                            await cache.put(key, response.clone());
+                        } catch (error) { /* кеш может быть недоступен */ }
+                    }
+                }
+                return response;
+            } catch (error) {
+                const name = await getActiveCacheName();
+                const cache = name ? await caches.open(name) : null;
+                const cached = cache ? await cache.match(event.request, { ignoreSearch: true }) : null;
+                if (cached) return cached;
+                throw error;
+            }
+        })());
+        return;
+    }
+
     event.respondWith(
         getActiveCacheName()
             .then(name => name ? caches.open(name) : null)
@@ -206,6 +240,29 @@ self.addEventListener("message", event => {
             ? _cacheName.replace(CACHE_NAME_PREFIX + "-v", "")
             : null;
         port.postMessage({ version: version, buildid: _buildId });
+        return;
+    }
+
+    // Страница спрашивает свежий version.json через SW: его собственный
+    // fetch не проходит через обработчик fetch этого же SW, поэтому сюда
+    // не применяется cache-first. Это запасной путь, если браузер всё же
+    // отдал закешированный ответ на обычный запрос страницы.
+    if (event.data.type === "getVersionJson") {
+        event.waitUntil((async () => {
+            try {
+                const response = await fetch("version.json?t=" + Date.now(), { cache: "no-store" });
+                if (!response.ok) throw new Error("HTTP " + response.status);
+                const info = await response.json();
+                port.postMessage({
+                    ok: true,
+                    version: info.version || null,
+                    buildid: info.buildid || null,
+                    changes: Array.isArray(info.changes) ? info.changes : []
+                });
+            } catch (error) {
+                port.postMessage({ ok: false, error: error.message });
+            }
+        })());
         return;
     }
 
